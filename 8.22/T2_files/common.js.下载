@@ -1,0 +1,308 @@
+//2期接口
+var host = "http://47.107.236.48:8181/bsoj_dc";
+
+//1期迁移接口
+var beecentHost = "http://47.107.236.48:8181/bsoj_dc";
+
+let isDebug = false;
+
+//根据debug的状态输出信息
+function logger(info) {
+    if (isDebug) {
+        console.log(info);
+    }
+}
+
+//获取地址栏参数
+function getUrlKey(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '='
+        + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1]
+            .replace(/\+/g, '%20'))
+        || null
+}
+
+//判断对象是否为空
+function isNull(obj) {
+    if (obj === "" || obj === undefined || obj === null) {
+        return true;
+    }
+    return false;
+}
+
+/***
+ * 用户登录提交
+ * 修改者：LiuHuan
+ * 修改时间：2020-07-12
+ */
+function subLogin() {
+    //var regExp = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+    var txt_login_name = $("#txt_login_name").val();
+    var txt_password = $("#txt_password").val();
+    var txt_code = $("#txt_code").val();
+    var flag = 1;
+    if (txt_login_name == "") {
+        layer.msg("登录账号不能为空");
+        return;
+    }
+
+    // if (!regExp.test(txt_email)) {
+    //     layer.msg("请输入正确的邮箱地址");
+    //     return;
+    // }
+
+    if (txt_password == "") {
+        layer.msg("密码不能为空");
+        return;
+    }
+    if (txt_code == "") {
+        layer.msg("验证码不能为空");
+        return;
+    }
+
+    txt_password = $.md5($.md5(txt_password));
+
+    $.ajax({
+        url: "../user/login",
+        type: "POST",
+        data: {
+            "memberEmail": txt_login_name,
+            "memberPwd": txt_password,
+            "vcode": txt_code,
+            "flag": flag
+        },
+        success: function (res) {
+            let resObj = $.parseJSON(res);
+            if (resObj.success) {
+                if (resObj.obj.member != null) {
+                    if (resObj.obj.member.length != 0) {
+                        $.cookie("username", resObj.obj.member.memberName, {
+                            expires: 7,
+                            path: '/'
+                        });
+                        $.cookie("userid", resObj.obj.member.id, {
+                            expires: 7,
+                            path: '/'
+                        });
+                        layer.closeAll();
+                        layer.msg("登录成功");
+                        window.location.reload();
+                    }
+                } else {
+                    layer.msg(resObj.obj.msg);
+                }
+            } else {
+                layer.msg(resObj.msg);
+            }
+        }
+    });
+}
+
+//手机登录
+function logins2() {
+    var regExp = /^1[3-9]\d{9}$/;
+    var txt_phone = $("#txt_phone").val();
+    var txt_password = $("#txt_password2").val();
+    var txt_code = $("#txt_code2").val();
+    var flag = 1;
+    if (txt_phone == "") {
+        layer.msg("手机号不能为空");
+        return;
+    }
+
+    if (!regExp.test(txt_phone)) {
+        layer.msg("请输入正确的手机号格式");
+        return;
+    }
+
+
+    if (txt_password == "") {
+        layer.msg("密码不能为空");
+        return;
+    }
+    if (txt_code == "") {
+        layer.msg("验证码不能为空");
+        return;
+    }
+    txt_password = $.md5($.md5(txt_password));
+    $.ajax({
+        url: "../user/login",
+        type: "POST",
+        data: {
+            "memberPhone": txt_phone,
+            "memberPwd": txt_password,
+            "vcode": txt_code,
+            "flag": flag,
+            "loginType": 2
+        },
+        success: function (res) {
+            console.log(res);
+            let resObj = $.parseJSON(res);
+            if (resObj.success) {
+                if (resObj.obj.member != null) {
+                    if (resObj.obj.member.length != 0) {
+                        $.cookie("username", resObj.obj.member.memberName, {
+                            expires: 7,
+                            path: '/'
+                        });
+                        $.cookie("userid", resObj.obj.member.id, {
+                            expires: 7,
+                            path: '/'
+                        });
+                        layer.closeAll();
+                        layer.msg("登录成功");
+                        window.location.reload();
+
+                    }
+                } else {
+                    layer.msg(resObj.obj.msg);
+                }
+            } else {
+                layer.msg(resObj.msg);
+            }
+        }
+    });
+}
+
+/**
+ * 登录弹窗
+ */
+function login() {
+    layer.open({
+        type: 1,
+        title: "登录",
+        closeBtn: 1,
+        shadeClose: true,
+        area: ['400px', '360px'],
+        content: $("#pop-login")
+    });
+}
+
+/**
+ * 退出登录
+ */
+function logout() {
+    var userid = $.cookie('userid');
+    $.ajax({
+        url: beecentHost + '/api/beecent/member/logout',
+        type: "POST",
+        data: {
+            "userId": userid
+        },
+        success: function (result) {
+            $.removeCookie('userid', {path: '/'});
+            $.removeCookie('username', {path: '/'})
+            window.location.href = "/";
+        }
+    });
+}
+
+$(function () {
+    var userid = $.cookie('userid');
+    var username = $.cookie('username');
+    if (userid != undefined &&
+        username != undefined &&
+        userid.length != 0 &&
+        username.length != 0) {
+        $('#login').attr('style', 'display:none');
+        $('#register').attr('style', 'display:none');
+        $('#dot').attr('style', 'display:none');
+        $('#user-name').html(username);
+        $('#user-name').attr('style', '');
+    }
+
+    $("#show_xxwh").hide();
+    $("#user-name").hover(function () {
+        $("#logout").show();
+    })
+    $("#logout").hover(function () {
+        $("#logout").show();
+    }, function () {
+        $("#logout").hide();
+    })
+});
+
+function collect(obj) {
+    var str = $(obj).html();
+    if (str == '收藏') {
+        layer.msg("收藏成功");
+        $(obj).html("已收藏");
+    } else if (str == "已收藏") {
+        layer.msg("取消收藏");
+        $(obj).html("收藏");
+    }
+}
+
+function getMyDate(str) {
+    var oDate = new Date(str),
+        oYear = oDate.getFullYear(),
+        oMonth = oDate
+            .getMonth() + 1,
+        oDay = oDate.getDate(),
+        oHour = oDate.getHours(),
+        oMin = oDate
+            .getMinutes(),
+        oSen = oDate.getSeconds(),
+        oTime = oYear + '-'
+            + getzf(oMonth) + '-' + getzf(oDay) + ' ' + getzf(oHour) + ':'
+            + getzf(oMin) + ':' + getzf(oSen);// 最后拼接时间
+    return oTime;
+};
+
+// 补0操作
+function getzf(num) {
+    if (parseInt(num) < 10) {
+        num = '0' + num;
+    }
+    return num;
+}
+
+//跳转个人中心
+function toPersonal() {
+    var userid = $.cookie('userid');
+    var username = $.cookie('username');
+    if (userid != undefined && username != undefined && userid.length != 0
+        && username.length != 0) {
+        var path = $("#ctxPath").val();
+        setTimeout(window.location.href = path + "/personal/index?userid=" + userid, 3000);
+    } else {//跳转登录页面
+        $.ajax({
+            url: beecentHost + '/api/beecent/sysbase/vcode?type=1',
+            type: "GET",
+            success: function (result) {
+                $("#img_code").html(result.data.vcode);
+                $("#flag").val(result.data.flag);
+            }
+        });
+        layer.open({
+            type: 1,
+            title: "登录",
+            closeBtn: 1,
+            shadeClose: true,
+            area: ['400px', '360px'],
+            content: $("#pop-login")
+        });
+    }
+
+}
+
+
+//竞赛所有题目权限认证
+function findUserTopicPermission(competitionId,questionId) {
+    var userid = $.cookie('userid');
+
+    //查询用户权限[该用户是否报名了这个竞赛，当前时间是否在该题分卷时间内]
+    $.ajax({
+        url: host + '/competition/findUserTopicPermission?competitionId=' + competitionId
+            + '&userid=' + userid+ '&questionId=' + questionId,
+        type: "POST",
+        async: false,
+        dataType: "json",
+        data: {},
+        success:function (result) {
+            if(result==null||result.success==false){
+                window.location.href = './index';
+            }
+        }
+    });
+
+}

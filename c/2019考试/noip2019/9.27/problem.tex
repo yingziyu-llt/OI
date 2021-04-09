@@ -1,0 +1,249 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage[top=0.7in,bottom=0.7in,left=0.5in,right=0.5in]{geometry}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\lhead{NOIP2018模拟赛} 
+\rhead{\leftmark} 
+\cfoot{}
+\rfoot{\thepage} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{NOIP2018模拟赛}
+\date{\today}
+   
+\begin{document}
+
+	\maketitle
+
+	一、题目概况
+	\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{100pt}<{\centering}|p{118pt}<{\centering}|p{118pt}<{\centering}|p{118pt}<{\centering}|}
+		\hline
+		题目名称 & 考场安排 & 小X的数列 & 警力覆盖 \\
+		\hline
+		英文题目与子目录名 & a & b & c \\
+		\hline
+		可执行文件名 & a & b & c \\
+		\hline
+		输入文件 & a.in & b.in & c.in \\
+		\hline
+		输出文件 & a.out & b.out & c.out \\
+		\hline
+		每个测试点时限 & 1.0秒 & 1.0秒 & 1.0秒 \\
+		\hline
+		内存限制 & 256MB & 256MB & 256MB \\
+		\hline
+		测试点数目 & 10 & 10 & 10 \\
+		\hline
+		每个测试点分值 & 10 & 10 & 10 \\
+		\hline
+		题目类型 & 传统型 & 传统型 & 传统型 \\
+		\hline
+		结果比较方式 & \multicolumn{3}{|c|}{全文比较(过滤行末空格及文末回车)} \\
+		\hline
+	\end{tabular}
+	\end{table}
+		
+	二、提交源程序文件名
+	\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{100pt}<{\centering}|p{118pt}<{\centering}|p{118pt}<{\centering}|p{118pt}<{\centering}|}
+		\hline
+		对于C++语言 & a.cpp & b.cpp & c.cpp \\
+		\hline
+		对于C语言 & a.c & b.c & c.c \\
+		\hline
+		对于Pascal语言 & a.pas & b.pas & c.pas \\
+		\hline
+	\end{tabular}
+	\end{table}
+
+	三、编译命令（不包含任何优化开关）
+	\begin{table}[htbp]
+	\centering
+	\begin{tabular}{|p{100pt}<{\centering}|p{118pt}<{\centering}|p{118pt}<{\centering}|p{118pt}<{\centering}|}
+		\hline
+		对于C++语言 & g++ -o a -lm a.cpp & g++ -o b -lm b.cpp & g++ -o c -lm c.cpp \\
+		\hline
+		对于C语言 & gcc -o a -lm a.cpp & gcc -o b -lm b.cpp & gcc -o c -lm c.cpp \\
+		\hline
+		对于Pascal语言 & fps a.pas & fps b.pas & fps c.pas \\
+		\hline
+	\end{tabular}
+	\end{table}
+
+	注意事项：
+	\begin{enumerate}
+
+		\item 文件名(程序名和输入输出文件名)必须使用英文小写。
+		
+		\item C/C++中函数main()的返回值类型必须是int，程序正常结束时的返回值必须是0。
+
+		\item 只提供Linux格式附加样例文件。
+
+		\item 题目难度与顺序无关。
+		
+	\end{enumerate}
+
+	\newpage
+
+	\begin{center}
+		\section{考场安排}
+	\end{center}
+
+		\subsection*{【问题描述】}
+		
+			小X所在的学校有\(n\)个班级，\(m\)个空教室，其中第\(i\)个班级有\(a_i\)个学生，第\(j\)个教室可以容纳\(b_j\)名学生；
+			
+			最近，学校要安排一场月考，但是学校的辣鸡管理系统崩溃了，于是想请小X安排考场，注意同班的学生不能在同一个考场考试；
+
+			小X不知道应该怎么安排，你能帮他解决这个问题吗？			
+
+		\subsection*{【输入格式】}
+
+			从a.in中读入数据。
+
+			输入的第一行包含三个用空格分隔的正整数\(n,m\)。
+
+			第二行，每行包含\(n\)个用空格分隔的正整数表示\(a_{1\ldots n}\)。
+
+			第三行，每行包含\(m\)个用空格分隔的正整数表示\(b_{1\ldots m}\)。
+
+		\subsection*{【输出格式】}
+
+			输出到a.out中。
+
+			对于每组数据，输出一行，若存在一种考场分配方案，输出\("Yes"\)（不含引号），否则输出\("No"\)（不含引号）。
+
+		\subsection*{【样例输入输出1】}
+
+		\begin{table}[htbp]
+		\centering
+		\begin{tabular}{p{240pt}<{\raggedright}|p{240pt}<{\raggedright}}
+			\hline
+			1 & 1 \\
+			4 5 \\ 4 5 3 5 \\ 3 5 2 6 4 \\
+			\hline
+		\end{tabular}
+		\end{table}
+
+		\subsection*{【数据规模和约定】}
+
+		对于30\%的数据，\(1\leq n,m\leq 10\)。
+
+		对于100\%的数据，\(1\leq T\leq 5,1\leq n,m\leq 150,1\leq a_i,b_i\leq 200\)。
+	
+	\newpage
+	
+	\begin{center}
+		\section{小X的数列}
+	\end{center}
+
+		\subsection*{【问题描述】}
+		
+			小X最近在研究一个问题：
+
+			给定\(n\)，一个正整数数列\(a_{1\ldots n}\)以及一个\(1\sim n\)的排列\(b_{1\ldots n}\)；
+
+			求\(f(h)=\sum_{i=1}^n a_i[b_{i-1}<b_i\ and\ b_i>b_{i+1}]\)，其中定义符号\([x]\)表示当条件\(x\)为真时表达式的值为\(1\)，否则为\(0\)；
+
+			为了方便起见，令\(b[0]=b[n+1]=0\)；
+
+			但是小X认为这道题太简单了，决定修改了一下：
+
+			给定\(n\)和一个数列\(a_{1\ldots n}\)，求出\(f(h)\)的期望。
+
+		\subsection*{【输入格式】}
+
+			从b.in中读入数据。
+
+			输入的第一行包含一个整数\(T\)，表示数据的组数。
+
+			对于每组数据：
+			
+			第一行一个整数\(n\)；
+
+			第二行\(n\)个用空格分隔整数，表示\(a_{1\ldots n}\)。
+
+		\subsection*{【输出格式】}
+
+			输出到b.out中。
+
+			对于每组数据，输出一行一个实数，表示\(f(h)\)的期望，精确到小数点后三位。
+		
+		\subsection*{【样例输入输出1】}
+
+		\begin{table}[htbp]
+		\centering
+		\begin{tabular}{p{240pt}<{\raggedright}|p{240pt}<{\raggedright}}
+			\hline
+			2 & 1.000 \\
+			1 1 \\
+			\hline
+		\end{tabular}
+		\end{table}
+
+		\subsection*{【数据规模和约定】}
+
+		对于20\%的数据，\(1\leq T\leq 10,1\leq n\leq 10\)；
+
+		对于50\%的数据，\(1\leq T\leq 10,1\leq n\leq 10^3\)；
+
+		对于100\%的数据，\(1\leq T\leq 100,1\leq n\leq 10^5,1\leq a_i\leq 10^3\)。
+
+	\newpage
+
+	\begin{center}
+		\section{警力覆盖}
+	\end{center}
+
+		\subsection*{【问题描述】}
+		
+			小X的家乡是由\(n\)个村庄构成的乡镇，村庄之间由共\(n-1\)条道路联通，每条道路仅连接两个村庄且保证任一个村庄能通过道路到达任意另一个村庄；
+
+			现在为了社会稳定和繁荣发展，乡政府决定在某些村庄建设警务站，使得该村庄和与它直接相连的村庄能被警力覆盖；
+
+			但是为了不使资源浪费，一个村庄至多只能被一个警务站的警力覆盖；
+
+			请问至少要建立多少个警务站？
+
+		\subsection*{【输入格式】}
+
+			从c.in中读入数据。
+
+			输入的第一行包含一个整数\(n\)。
+			
+			接下来的\(n-1\)行，每行包含两个用空格分隔的整数\(x,y\)，表示\(x\)村庄和\(y\)村庄之间有道路直接相连。
+
+		\subsection*{【输出格式】}
+
+			输出到c.out中。
+
+			输出一行一个整数，表示最小的警务站数量。
+		
+		\subsection*{【样例输入输出1】}
+
+		\begin{table}[htbp]
+		\centering
+		\begin{tabular}{p{240pt}<{\raggedright}|p{240pt}<{\raggedright}}
+			\hline
+			6 & 2 \\
+			1 3 \\ 2 3 \\ 3 4 \\ 4 5 \\ 4 6 \\
+			\hline
+		\end{tabular}
+		\end{table}
+
+		\subsection*{【数据规模和约定】}
+
+		对于30\%的数据，\(1\leq n\leq 15\)；
+
+		对于100\%的数据，\(1\leq n\leq 10^4\)。
+
+\end{document}

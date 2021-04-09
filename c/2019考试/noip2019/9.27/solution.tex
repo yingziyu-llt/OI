@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage[top=0.7in,bottom=0.7in,left=0.5in,right=0.5in]{geometry}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\lhead{NOIP2018模拟赛} 
+\rhead{} 
+\cfoot{}
+\rfoot{\thepage} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{NOIP2018模拟赛 题解}
+\date{\today}
+
+\begin{document}
+
+	\maketitle
+
+	\section{考场安排}
+    
+    对于30\%的数据：搜索枚举所有情况。
+
+    对于100\%的数据：
+    
+    比较容易想到的是贪心解法：优先考虑大班级坐大桌子即可。
+
+    另一种解法为网络最大流，从源点向每个班级连边，容量为班级人数，从每个教室向汇点连边，容量为教室人数，从每个班级向每个教室连边，容量为\(1\)，使用任何最大流算法均可。
+
+	\section{小X的数列}
+    
+    对于20\%的数据，枚举情况判断即可；
+
+    对于50\%的数据，（我也不知道怎么写）；
+
+    对于100\%的数据：
+
+    首先考虑两端的数，如果这位\(b[i]=k\)，那么这一位的期望是\(a_i\times \frac 1n\times \frac {i-1}{n-1}\)；
+
+    即两端的期望为\(a_i\times \frac 1n\times \sum_{i=1}^{n-1} \frac i{n-1}=\frac 12 a_i\)；
+
+    再考虑中间的数，如果这位\(b[i]=k\)，那么这一位的期望是\(a_i\times \frac 1n\times \frac {i-1}{n-1}\times \frac {i-2}{n-2}\)；
+
+    即中间的期望是\(a_i\times \frac 1n\times \sum_{i=1}^{n-2} \frac {i(i+1)}{(n-1)(n-2)}=\frac 13 a_i\)；
+
+    提示：\(\sum_{i=1}^n i^2=\frac {n(n+1)(2n+1)}6\)。
+
+    即答案为\(\frac 12\times (a_1+a_n)+\frac 13\times \sum_{i=2}^{n-1} a_i\)。
+    
+	\section{警力覆盖}
+    
+	对于30\%的数据，二进制枚举；
+
+    对于100\%的数据，考虑树形DP：
+
+    设\(f[u][0]\)表示在\(u\)村庄建设警务站，其父亲和儿子是否建设警务站均可；
+
+    设\(f[u][1]\)表示在\(u\)的父亲建设警务站，不在\(u\)和\(u\)的儿子建设警务站；
+
+    设\(f[u][2]\)表示在\(u\)的一个儿子建设警务站，不在\(u\)和\(u\)的父亲建设警务站；
+
+    设\(v\)是\(u\)的一个儿子：
+
+    从叶节点向根转移，容易得出状态转移方程\(f[u][0]=\sum_v min(f[v][0],f[v][1]),f[u][1]=\sum_v f[v][2]\)；
+
+    考虑\(f[u][2]\)和状态\(f[u][1]\)的不同：
+
+    \(f[u][2]\)要求在\(v\)建设警务站，\(u\)和\(v\)的儿子不建设；
+
+    \(f[u][1]\)要求在\(v\)的一个儿子建设警务站，\(u\)和\(v\)的不建设；
+
+    故用\(f[u][1]\)减去\(v\)的儿子建设警务站的情况（\(f[v][2]\)），加上\(v\)建设警务站的情况（\(f[v][0]\)）即可。
+
+\end{document}

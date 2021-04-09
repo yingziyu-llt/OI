@@ -1,0 +1,21 @@
+gen 10 >wa1.in
+wa <wa1.in >wa1.out
+gen 10 >wa2.in
+wa <wa2.in >wa2.out
+gen 1000 >wa3.in
+wa <wa3.in >wa3.out
+gen 1000 >wa4.in
+wa <wa4.in >wa4.out
+gen 1000 >wa5.in
+wa <wa5.in >wa5.out
+gen 1000 >wa6.in
+wa <wa6.in >wa6.out
+gen 100000 >wa7.in
+wa <wa7.in >wa7.out
+gen 100000 >wa8.in
+wa <wa8.in >wa8.out
+gen 100000 >wa9.in
+wa <wa9.in >wa9.out
+gen 100000 >wa10.in
+wa <wa10.in >wa10.out
+pause

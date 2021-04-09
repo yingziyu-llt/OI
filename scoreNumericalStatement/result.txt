@@ -1,0 +1,135 @@
+Group scores :
+A : 11 Point(s) 
+llt : 23 Point(s)
+lly : -2 Point(s)
+wyh : -3 Point(s)
+xxt : -7 Point(s)
+
+B : -19 Point(s) 
+cmj : -11 Point(s)
+rmhy : 2 Point(s)
+wpy : -5 Point(s)
+zxf : -5 Point(s)
+
+C : -21 Point(s) 
+lrq : 9 Point(s)
+mrk : -21 Point(s)
+swq : -4 Point(s)
+ysy : -5 Point(s)
+
+D : -35 Point(s) 
+bxf : -6 Point(s)
+hhl : -29 Point(s)
+hty : -3 Point(s)
+wzf : 3 Point(s)
+
+E : 2 Point(s) 
+gyt : 20 Point(s)
+ymy : -2 Point(s)
+zyc : -13 Point(s)
+zrl : -3 Point(s)
+
+F : 1 Point(s) 
+wqz : -6 Point(s)
+yjw : -7 Point(s)
+zjw : 21 Point(s)
+zls : -7 Point(s)
+
+G : 4 Point(s) 
+gww : 11 Point(s)
+gsd : -1 Point(s)
+lkq : -4 Point(s)
+xty : -2 Point(s)
+
+H : -22 Point(s) 
+ly : -10 Point(s)
+nwx : -4 Point(s)
+syb : -10 Point(s)
+yzj : 2 Point(s)
+
+I : 1 Point(s) 
+cyh : -4 Point(s)
+fxh : 19 Point(s)
+qyn : -2 Point(s)
+yjm : -12 Point(s)
+
+J : 2 Point(s) 
+hlw : -13 Point(s)
+lyh : -6 Point(s)
+szq : 21 Point(s)
+wzp : 0 Point(s)
+
+K : 4 Point(s) 
+sfy : -3 Point(s)
+syh : -11 Point(s)
+yym : 22 Point(s)
+zzx : -4 Point(s)
+
+L : -15 Point(s) 
+cjw : -10 Point(s)
+jwj : -5 Point(s)
+jwy : 6 Point(s)
+zhf : -6 Point(s)
+
+M : -43 Point(s) 
+cxy : -3 Point(s)
+jyx : -25 Point(s)
+myq : -9 Point(s)
+sxy : -6 Point(s)
+
+N : -11 Point(s) 
+xsz : -11 Point(s)
+
+15
+26
+12
+10
+-19
+4
+-20
+-15
+-12
+-23
+-22
+-17
+-28
+-28
+-29
+-33
+6
+9
+5
+5
+2
+3
+1
+14
+10
+19
+5
+5
+-20
+-20
+-19
+-21
+2
+3
+1
+4
+3
+-2
+16
+2
+5
+1
+8
+1
+-16
+-12
+-9
+-18
+-39
+-46
+-46
+-43
+-11

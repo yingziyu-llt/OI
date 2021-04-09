@@ -1,0 +1,498 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    color: #333;
+    background: #f9f9fc;
+    font-size: 100%;
+    line-height: 1;
+    font-family: 'PingFangSC-Medium', helvetica, 'Heiti SC', "Hiragino Sans GB", "Droid Sans", "Microsoft Yahei";
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+select,
+input,
+button {
+    font-size: 100%;
+    font-weight: normal;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+form,
+p,
+img,
+hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input,
+button,
+select,
+img {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    border: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul,
+li,
+dl,
+dt,
+dd {
+    list-style: none;
+}
+
+select,
+input,
+textarea,
+button,
+button img,
+label {
+    vertical-align: middle;
+    font-family: 'PingFangSC-Medium', helvetica, 'Heiti SC', "Hiragino Sans GB", "Droid Sans", "Microsoft Yahei";
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: none
+}
+
+textarea {
+    padding: 6px 12px;
+    line-height: 1.42857143;
+}
+
+
+header,
+footer,
+section,
+aside,
+nav,
+hgroup,
+figure,
+figcaption {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+    /* color: #6693f8; */
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
+a:hover {
+    /* color: #064ff4; */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearB {
+    clear: both;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 1280px;
+}
+
+.user-container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+.font-weight8 {
+    font-weight: 800;
+}
+
+.font-weight6 {
+    font-weight: 600;
+}
+
+
+.font-weight {
+    font-weight: bold;
+}
+
+.font14 {
+    font-size: 14px;
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.font20 {
+    font-size: 20px;
+}
+
+.font22 {
+    font-size: 22px;
+}
+
+.font24 {
+    font-size: 24px;
+}
+
+.marTop10 {
+    margin-top: 10px;
+}
+
+.marRight10 {
+    margin-right: 10px;
+}
+
+.marLeft10 {
+    margin-left: 10px;
+}
+
+.marBottom10 {
+    margin-bottom: 10px;
+}
+
+.marTop15 {
+    margin-top: 15px;
+}
+
+.marRight15 {
+    margin-right: 15px;
+}
+
+.marLeft15 {
+    margin-left: 15px;
+}
+
+.marBottom15 {
+    margin-bottom: 15px;
+}
+
+.marTop20 {
+    margin-top: 20px;
+}
+
+.marRight20 {
+    margin-right: 20px;
+}
+
+.marLeft20 {
+    margin-left: 20px;
+}
+
+.marBottom20 {
+    margin-bottom: 20px;
+}
+
+
+.floatR {
+    float: right;
+}
+
+.floatL {
+    float: left;
+}
+
+.colorGreen {
+    color: green;
+}
+
+.colorRed {
+    color: red;
+}
+
+.colorOrange {
+    color: orange;
+}
+
+.colorGray {
+    color: gray
+}
+
+.colorDefault {
+    color: #0196ff;
+}
+
+.bgColorGreen {
+    background-color: green;
+    color: #fff;
+}
+
+.bgColorLightGreen {
+    background-color: #c7e7d5;
+    color: #000;
+}
+
+.bgColorLightPink {
+    background-color: #ffdbe0;
+    color: #000;
+}
+
+.dd-line {
+    height: 1px;
+    background: #c2c2c2;
+    width: 100%;
+    margin: 15px auto;
+}
+
+.dd-longline {
+    width: 100%;
+    height: 1px;
+    background: #c2c2c2;
+    transform: scaleY(0.5);
+    margin: 20px 0;
+}
+
+.article {
+    height: 1px;
+    background: #dbdbdb;
+    transform: scaleY(0.5);
+}
+
+
+.shadow {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.textLeft {
+    text-align: left;
+}
+
+.textRight {
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.show{
+    display: show;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+
+/*****题目列表页新增内容*****/
+.answer_type {
+    position: relative;
+    width: 100%;
+    height: 48px;
+}
+
+.answer_type .select_type {
+    padding: 0px 30px 10px 30px;
+}
+
+.list_main {
+    position: relative;
+    padding: 20px 40px;
+    font-size: 18px;
+}
+
+.list_group {
+    position: relative;
+    padding: 20px 40px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.list_alert {
+    position: relative;
+    text-align: center;
+    margin: 0px auto;
+    margin-top: 30px;
+    width: 300px;
+    height: 64px;
+    line-height: 64px;
+    font-size: 18px;
+    border: 1px solid #C3C3C3;
+
+}
+
+.pop-table {
+    text-align: center;
+    display: none;
+}
+
+.model_title {
+    margin: 12px 20px;
+    line-height: 22px;
+}
+
+
+.model_content {
+    margin: 12px 20px;
+}
+
+.model_content select {
+    width: 200px;
+    height: 24px;
+    border: 1px solid #C2C2C2;
+    margin-left: 12px;
+}
+
+.model_btn {
+    position: relative;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+
+/*答题*/
+.answer {
+    position: relative;
+    margin-top: 24px;
+    min-height: 450px;
+    height: auto;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: y;
+    padding: 0px 20px 30px 20px;
+}
+
+.answer .title {
+    float: left;
+    margin: 24px 40px;
+}
+
+.answer .down-timer,
+.exam .down-timer {
+    float: right;
+    margin: 24px 12px;
+    font-size: 32px;
+    font-style: italic;
+}
+
+.answer .list table {
+    position: relative;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 0px auto 40px auto;
+}
+
+.answer .list table td,
+.answer .list table th {
+    border: 0px solid #cad9ea;
+    height: 50px;
+}
+
+.answer .list table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.answer .list table tr:nth-child(even) {
+    background-color: #f6fafd;
+}
+
+.answer .list table .start {
+    height: 24px;
+    line-height: 24px;
+    background: url(../img/tag-start-answer.png) no-repeat 0 center;
+    padding-left: 24px;
+}
+
+.answer .list table .edit {
+    height: 24px;
+    line-height: 24px;
+    background: url(../img/tag-edit-answer.png) no-repeat 0 center;
+    padding-left: 24px;
+}
+
+.answer .return-detail {
+    text-align: right;
+    margin: 30px 30px 0 0;
+}
+
+.answer .return-detail a {
+    display: inline-block;
+    width: 160px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    background-color: #0196ff;
+    border-radius: 12px;
+    color: #FFF;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.answer .return-detail a:hover {
+    background-color: #0385e0;
+    color: #FFF;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*****vue代码不显示大括号*****/
+[v-cloak] {
+    display: none;
+}

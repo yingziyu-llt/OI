@@ -1,0 +1,9 @@
+
+$.ajaxSetup({
+    data:{
+        apiCode: 'web',
+        timestamp:Math.round(new Date().getTime()/1000),
+        accessToken:'6f52ec8a-ad9a-45d1-89cf-4520213a88f6',
+        sign: hex_md5('6f52ec8a-ad9a-45d1-89cf-4520213a88f6'+'web'+Math.round(new Date().getTime()/1000))
+    }
+});

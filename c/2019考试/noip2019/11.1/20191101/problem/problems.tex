@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{ulem}
+\usepackage{tabularx}  
+\usepackage[colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=green,CJKbookmarks=True]{hyperref}
+\usepackage{graphicx}
+\geometry{left=4.0cm,right=4.0cm,top=2.5cm,bottom=2.5cm}
+\renewcommand{\normalsize}{\fontsize{12pt}{\baselineskip}\selectfont}
+\begin{document}
+\title{国庆水题测试}
+\date{\today}
+\author{blcup、jiangtao、Wahacer}
+\maketitle
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{3.2cm}<{\centering}|p{3.2cm}<{\centering}|p{3.2cm}<{\centering}|p{3.2cm}<{\centering}|}  
+\hline
+题目名称  & Azur\ Lane & function & orz \\  
+\hline
+提交文件名 & az & function & orz \\
+\hline
+输入文件名 & az.in & function.in &  orz.in\\
+\hline
+输出文件名 & az.out & function.out &  orz.out\\
+\hline
+每个测试点时限 & 2s & 1s & 1s \\
+\hline
+题目类型 & 传统型 & 传统型 & 传统型 \\
+\hline
+空间限制 & 256MB & 256MB & 162MB \\
+\hline
+测试点个数 & 10 & 10 & 10 \\
+\hline
+每个测试点分数 & 10 & 10 & 10 \\
+\hline
+\end{tabular}
+\end{table}
+\end{center}
+注:
+\begin{itemize}
+  \item 测评环境为 lemon+windows+cpu 主频 3.4GHz
+  \item 默认栈空间限制与内存限制相同
+  \item 题目难度与顺序无关
+  \item 仅提交一个总文件夹
+\end{itemize}
+\newpage
+\begin{spacing}{1.0}
+\section{Azur\ Lane}
+\subsection{题目背景}
+这是一个表面被71\%的海水覆盖着的蓝色星球，人类在这片碧蓝色之中出生、成长、孕育和发展属于自己的文明。\\
+然而，伴随着它们的，还有不断膨胀的野心和欲望。表面风平浪静的世界格局之下，历史的暗流涌动。\\
+终于，未知的敌人在海洋中出现，面对敌方压倒性的战力，各个阵营却仍然各自为战，最终换来的结果亦是惨痛的：人类失去了90\%以上的海域控制权，科技和生活水平急速倒退。人类对于海洋以及未知的敌人产生了深深的阴影，并且将那些将他们拖入深海黑暗之中的怪物们称之为“塞壬”。\\
+数十年之后，各大阵营为了夺回曾经的辉煌，终于摒弃前嫌，联合创建了第三方军事组织“碧蓝航线”，“碧蓝航线”的宗旨在于：集结并共享来自世界各大阵营的科技与资源，建造出能够与“塞壬”抗衡的新锐舰队，夺回海域的控制权。\\
+创立初期，来自各大阵营的科学家和军官们协力协作，克服了许多难关，终于将“塞壬”驱逐出了近海范围。然而好景不长，以强硬的军事化为特点的阵营“铁血”突然宣布退出组织，并且与历史对手“皇家”发生了数次激烈战斗。\\
+在战斗中人们惊讶的发现，“铁血”的舰队使用了来自“塞壬”的黑科技，轻松的击破了“皇家”的精锐舰队。这一切的背后究竟是有什么不为人知的PY交易？究竟是来自人类的欲望，还是来自“塞壬”的阴谋？\\
+殊不知，一个来自东方的神秘阵营亦正在酝酿着更大的风暴…\\
+
+\subsection{题目描述}
+\frame{\includegraphics[height=250pt]{Image/a.jpg}}\\
+众所周知，由某站代理的$Azur Lane$是一个弹幕\sout{养老婆}模拟器.\\
+对于每个舰娘，得到的途径有两种，第一种是刷图，第二种是抽船（类似于十连抽）.\\
+由于现在是活动池限定的时间，所以$blcup$打算把他平时攒的魔方投入到限定的活动池中池中.\\
+$blcup$进行了$n$次$m$连抽，由于$blcup$知道脸比较黑，所以他想知道自己有多少次抽出的船是完全不同的.\\
+比如：$AAABB$和$BABAA$是相同的，$AABAA$和$AAABB$是不同的.\\
+\subsection{输入格式}
+第一行，输入一个数$n$.\\
+接下来$n$行代表$blcup$每次抽出船的种类（每个不同的字母代表一种船）\\
+\subsection{输出格式}
+输出一行一个数字,表示答案.
+
+\subsection{样例一}
+\subsubsection{Input}
+5\\
+AAABB\\
+BBAAA\\
+AABCA\\
+AAAAAAAA\\
+ABDAUUS\\
+\subsubsection{Output}
+4
+
+\subsection{数据范围}
+对于$30\%$的数据，$n\le100$。\\
+对于$50\%$的数据，$n\le10000$。\\
+对于$100\%$的数据，$n\le50000$。\\
+保证$blcup$每次抽船不超过100艘。 \\
+\newpage
+
+\section{function}
+\subsection{题目描述}
+函数$F_{x,y}$满足$\begin{cases}F_{1,1}=F_{1,2}=1\\F_{1,i}=F_{1,i-1}+2*F_{1,i-2} (i\geq 3)\\F_{i,j}=\sum_{k=j}^{j+n-1}F_{i-1,k}(i\geq 2,j\geq 1)\end{cases}$\\
+对于给定的每一对$N$,$M$,求$F_{m,1}\bmod 1e9+7$\\
+为了满足jtyy的题面带图的愿望,特加入了这种图片.\\
+\frame{\includegraphics[height=80pt]{Image/b.jpg}}\\
+\subsection{输入格式}
+第一行一个正整数$T$，表示$T$组数据\\
+接下来$T$行，每一行两个正整数$N$和$M$.\\
+\subsection{输出格式}
+共$T$行，对于每一对$N$,$M$,输出$F_{m,1}\bmod 1e9+7$ \\
+\subsection{样例一}
+\subsubsection{Input}
+2\\
+2 2\\
+3 3\\
+\subsubsection{Output}
+2\\
+33\\
+\subsection{样例二}
+\subsubsection{Input}
+5\\
+6 2\\
+3 5\\
+6 4\\
+5 2\\
+2 4\\
+\subsubsection{Output}
+42\\
+1601\\
+166698\\
+21\\
+18\\
+\subsection{数据范围}
+对于$30\%$的数据，$1\leq T,N,M\leq 20$\\
+对于另外的$20\%$的数据，保证$N$,$M$均为偶数\\
+对于另外的$20\%$的数据，保证$N$,$M$均为奇数\\
+对于$100\%$的数据，$1\leq T\leq 10000,1\leq N,M\leq 2^{63}$\\
+\newpage
+\section{orz}
+\subsection{题目描述}
+在遥远的东方，有一个神秘的民族，自称per族。他们世代居住在水面上，奉c0per为神。\\
+\sout{当然还有什么女神?}.\\
+每逢重大庆典，per族都会在水面上举办盛大的祭祀活动。\\
+我们可以把per族居住地水系看成一个由岔口和河道组成的网络。\\
+每条河道连接着两个岔口，并且水按照一个固定的方向流。显然，水系中不会有环流.\\
+由于人数众多的原因，per族的祭祀活动会在多个岔口上同时举行。\\
+出于对c0per的尊重，这些祭祀地点的选择必须非常慎重。\\
+准确地说，per族人认为，如果水可以从一个祭祀点流到另外一个祭祀点，那么祭祀将无效。\\
+族长Peper希望在保持祭祀神圣性的基础上，选择尽可能多的祭祀的地点。\\
+\sout{我也要加图片！}\\
+\frame{\includegraphics[height=180pt]{Image/c.jpg}}\\
+\subsection{输入格式}
+第一行包含两个用空格隔开的整数$N$、$M$，分别表示岔口和河道的数目，岔口从$1$到$N$编号。\\
+接下来$M$行，每行包含两个用空格隔开的整数$u$、$v$，\\
+描述一条连接岔口$u$和岔口$v$的河道，水流方向为自$u$向$v$。\\
+\subsection{输出格式}
+第一行包含一个整数K，表示最多能选取的祭祀点的个数。\\
+\subsection{样例一}
+\subsubsection{Input}
+4 4\\
+1 2\\
+3 4\\
+3 2\\
+4 2\\
+\subsubsection{Output}
+2
+\subsubsection{Explanation}
+在样例给出的水系中，不存在一种方法能够选择三个或者三个以上的祭祀点。包含两个祭祀点的测试点的方案有两种：\\
+选择岔口1与岔口3（如样例输出第二行），选择岔口1与岔口4。\\
+水流可以从任意岔口流至岔口2。如果在岔口2建立祭祀点，那么任意其他岔口都不能建立祭祀点\\
+但是在最优的一种祭祀点的选取方案中我们可以建立两个祭祀点，所以岔口2不能建立祭祀点。\\
+对于其他岔口至少存在一个最优方案选择该岔口为祭祀点，所以输出为1011。\\
+\subsection{数据范围}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{5.5cm}<{\centering}|p{5.5cm}<{\centering}|p{3.2cm}<{\centering}|p{3.2cm}<{\centering}|}  
+\hline
+测试点  & $n$ & $m$   \\  
+\hline
+对于$30\%$的数据 & $n\leq 100$ & $m=1000$ \\
+\hline
+对于另外$20\%$的数据 & $n= 10$ & $m\leq 40$\\
+\hline
+对于另外$20\%$的数据& $n=100$ & $m\leq 150$\\
+\hline
+对于另外$10\%$的数据&$n=40$ &$m=200$ \\
+\hline
+对于另外$20\%$的数据 &$n=100$ &$m\leq 800$ \\
+\hline
+\end{tabular}
+\end{table}
+\end{center}
+
+\end{spacing}
+\end{document}
