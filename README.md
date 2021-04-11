@@ -1,2 +1,2 @@
 # OI
-llt's oi code
+llt的一些旧代码和学习资料，欢迎共享
